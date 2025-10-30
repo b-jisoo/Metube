@@ -1,22 +1,25 @@
+import HomeView from "@/modules/home/ui/views/home-view";
 import { getQueryClient, trpc } from "@/trpc/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { ClientGreeting } from "./client-greeting";
-import { ErrorBoundary } from "react-error-boundary";
-import { Suspense } from "react";
 
-export default async function Home() {
+export const dynamic = "force-dynamic";
+
+interface PageProps {
+  searchParams: Promise<{ categoryId?: string }>;
+}
+
+const Page = async ({ searchParams }: PageProps) => {
+  const { categoryId } = await searchParams;
+
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery(trpc.hello.queryOptions({ text: "world" }));
+  await queryClient.prefetchQuery(trpc.categories.getMany.queryOptions());
 
   return (
     <>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <ErrorBoundary fallback={<div>Something went wrong</div>}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <ClientGreeting />
-          </Suspense>
-        </ErrorBoundary>
+        <HomeView categoryId={categoryId} />
       </HydrationBoundary>
     </>
   );
-}
+};
+export default Page;

@@ -14,18 +14,18 @@ import {
 
 const items = [
   {
-    title: "Home",
+    title: "홈",
     url: "/",
     icon: HomeIcon,
   },
   {
-    title: "Subscriptions",
+    title: "구독",
     url: "/feed/subscriptions",
     icon: PlaySquareIcon,
     auth: true,
   },
   {
-    title: "Trending",
+    title: "인기 급상승",
     url: "/feed/trending",
     icon: FlameIcon,
   },
