@@ -3,6 +3,8 @@ import StudioView from "@/modules/studio/view/studio-view";
 import { getQueryClient, trpc } from "@/trpc/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 
+export const dynamic = "force-dynamic";
+
 const Page = async () => {
   const queryClient = getQueryClient();
   await queryClient.prefetchInfiniteQuery(

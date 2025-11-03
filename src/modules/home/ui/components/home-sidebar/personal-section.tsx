@@ -14,19 +14,19 @@ import { useAuth, useClerk } from "@clerk/nextjs";
 
 const items = [
   {
-    title: "history",
+    title: "기록",
     url: "/playlists/history",
     icon: HistoryIcon,
     auth: true,
   },
   {
-    title: "Liked videos",
+    title: "좋아요 표시한 동영상",
     url: "/playlists/liked",
     icon: ThumbsUpIcon,
     auth: true,
   },
   {
-    title: "All playlists",
+    title: "재생목록",
     url: "/playlists",
     icon: ListVideoIcon,
     auth: true,

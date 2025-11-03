@@ -1,5 +1,6 @@
 "use client";
 
+import ResponsiveDialog from "@/components/responsive-dialog";
 import { Button } from "@/components/ui/button";
 import { useTRPC } from "@/trpc/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -23,6 +24,19 @@ const StudioUploadModal = () => {
 
   return (
     <>
+      <ResponsiveDialog
+        title="동영상 업로드"
+        open={!!create.data}
+        onOpenChange={() => create.reset()}
+      >
+        <h1 className="text-xl font-bold">
+          동영상 파일을 드래그 앤 드롭하여 업로드
+        </h1>
+        <p className="text-xs text-muted-foreground">
+          동영상을 게시하기 전에는 비공개로 설정됩니다.
+        </p>
+      </ResponsiveDialog>
+
       <Button
         variant="secondary"
         onClick={() => create.mutate()}
