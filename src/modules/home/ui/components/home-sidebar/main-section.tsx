@@ -42,6 +42,7 @@ export const MainSection = () => {
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton
+                className="h-9"
                 tooltip={item.title}
                 asChild
                 isActive={false} //TODO: Change to loock at current pathname
@@ -52,8 +53,8 @@ export const MainSection = () => {
                   }
                 }}
               >
-                <Link href={item.url} className="flex items-center gap-4">
-                  <item.icon />
+                <Link href={item.url} className="flex items-center gap-4 ">
+                  <item.icon className="!w-6 !h-6" />
                   <span className="text-sm">{item.title}</span>
                 </Link>
               </SidebarMenuButton>

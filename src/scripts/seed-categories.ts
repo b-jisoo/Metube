@@ -4,20 +4,19 @@ import { db } from "@/db";
 import { categories } from "@/db/schema";
 
 const categoryNames = [
-  "자동차 및 탈것", // Cars and Vehicles
-  "코미디", // Comedy
-  "교육", // Education
-  "게임", // Gaming
-  "엔터테인먼트", // Entertainment
-  "영화 및 애니메이션", // Film and Animation
-  "노하우 및 스타일", // How-to and Style
-  "음악", // Music
-  "뉴스 및 정치", // News and Politics
-  "인물 및 블로그", // People and Blogs
-  "애완동물 및 동물", // Pets and Animals
-  "과학 및 기술", // Science and Technology
-  "스포츠", // Sports
-  "여행 및 이벤트", // Travel and Events
+  "음악",
+  "뉴스",
+  "게임",
+  "라이브",
+  "팟캐스트",
+  "배구",
+  "야구",
+  "축구",
+  "액션 어드벤처 게임",
+  "애니메이션",
+  "관광",
+  "반려동물",
+  "최근에 업로드된 동영상",
 ];
 
 async function main() {
@@ -25,6 +24,8 @@ async function main() {
     name,
     description: `${name} 관련 영상`,
   }));
+  // ✅ 기존 데이터 전체 삭제
+  await db.delete(categories);
 
   await db.insert(categories).values(values);
 

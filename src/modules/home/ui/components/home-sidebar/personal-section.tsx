@@ -38,7 +38,7 @@ export const PersonalSection = () => {
   const { isSignedIn } = useAuth();
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>You</SidebarGroupLabel>
+      <SidebarGroupLabel>내 페이지</SidebarGroupLabel>
       <SidebarGroupContent>
         <SidebarMenu>
           {items.map((item) => (
@@ -55,7 +55,7 @@ export const PersonalSection = () => {
                 }}
               >
                 <Link href={item.url} className="flex items-center gap-4">
-                  <item.icon />
+                  <item.icon className="!w-6 !h-6" />
                   <span className="text-sm">{item.title}</span>
                 </Link>
               </SidebarMenuButton>

@@ -30,7 +30,7 @@ export const AuthButton = () => {
      shadow-none "
           >
             <UserCircleIcon />
-            Sign in
+            로그인
           </Button>
         </SignInButton>
       </SignedOut>
