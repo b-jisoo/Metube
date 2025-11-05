@@ -20,7 +20,7 @@ interface ResponsiveDialogProps {
   onOpenChange: () => void;
 }
 
-export const ResponsiveDialog = ({
+export const ResponsiveModal = ({
   children,
   open,
   title,
@@ -52,4 +52,4 @@ export const ResponsiveDialog = ({
   );
 };
 
-export default ResponsiveDialog;
+export default ResponsiveModal;
